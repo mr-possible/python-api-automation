@@ -1,4 +1,5 @@
 import configparser
+import logging
 import os
 
 user_dir = os.path.pardir
@@ -6,5 +7,7 @@ user_dir = os.path.pardir
 
 def getConfig():
     config = configparser.ConfigParser()
-    config.read(user_dir + os.sep + 'utils' + os.sep + 'properties.ini')
+    filepath = os.getcwd() + os.sep + 'utils' + os.sep + 'properties.ini'
+    config.read(filepath)
+    logging.info(f'File [[{filepath}]] loaded !')
     return config
