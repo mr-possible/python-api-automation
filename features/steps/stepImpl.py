@@ -9,17 +9,18 @@ from utils.headers import Headers
 from utils.resources import Resources
 
 
-@given('the Book Details which need to be added to the Library')
-def step_addBookIMPL(context):
+@given('the Book Details with Book name :: {bookName}, ISBN :: {isbn}, Aisle :: {aisle} and Author :: {authorName} '
+       'which need to be added to the Library')
+def step_addBookIMPL(context, bookName, isbn, aisle, authorName):
     # Load your configuration for the test #
     config = getConfig()
     context.endpoint = config['API']['baseurl'] + Resources().get_addBookResource()
 
 
-@when('we execute AddBook POST API')
-def step_addBookIMPL(context):
+@when('we execute AddBook POST API with data :: {bookName} , {isbn}, {aisle} and {authorName}')
+def step_addBookIMPL(context, bookName, isbn, aisle, authorName):
     context.response = requests.post(url=context.endpoint,
-                                     json=payload.addBookPayload(),
+                                     json=payload.addBookPayload(bookName, isbn, aisle, authorName),
                                      headers=Headers().get_content_json())
 
 

@@ -1,12 +1,12 @@
-def addBookPayload():
+def addBookPayload(bookName, isbn, aisle, authorName):
     """
     @return: Returns the json payload required for adding a book to the database.
     """
     content = {
-        'name': 'Life Lessons from Rajni',
-        'isbn': 'abght865',
-        'aisle': '89',
-        'author': 'Rajnikanth'
+        'name': bookName,
+        'isbn': isbn,
+        'aisle': aisle,
+        'author': authorName
     }
     return content
 
