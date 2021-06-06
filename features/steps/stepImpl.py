@@ -9,9 +9,8 @@ from utils.headers import Headers
 from utils.resources import Resources
 
 
-@given('the Book Details with Book name :: {bookName}, ISBN :: {isbn}, Aisle :: {aisle} and Author :: {authorName} '
-       'which need to be added to the Library')
-def step_addBookIMPL(context, bookName, isbn, aisle, authorName):
+@given('the Book Details which need to be added to the Library')
+def step_addBookIMPL(context):
     # Load your configuration for the test #
     config = getConfig()
     context.endpoint = config['API']['baseurl'] + Resources().get_addBookResource()
