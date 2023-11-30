@@ -1,0 +1,44 @@
+# Virtual environment
+__pypackages__/
+venv/
+env/
+
+# Build files
+build/
+dist/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Poetry
+poetry.lock
+pyproject.toml
+
+# VS Code specific files
+.vscode/
+*.code-workspace
+
+# Jupyter Notebook
+*.ipynb_checkpoints/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Miscellaneous
+*.log
+*.sqlite
+*.swp
+*.swo
+*.out
+
+# IDE files
+.idea/*
+
+# Editor-specific files
+*.vscode/
