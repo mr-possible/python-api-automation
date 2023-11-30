@@ -10,6 +10,7 @@ packages = [{include = "python_api_automation"}]
 python = "^3.11"
 requests = "^2.31.0"
 behave = "^1.2.6"
+mysql-connector-python = "8.0.26"
 
 
 [build-system]
