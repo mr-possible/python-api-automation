@@ -1,17 +1,17 @@
 import json
-from utils import payload
+import os
 import requests
-from utils.configurations import *
+from utils import payload
 from utils.resources import Resources
 from utils.headers import Headers
+from dotenv import load_dotenv
 
-## Load your configuration for the test ##
-config = getConfig()
+load_dotenv()
 
-## API Test to add book to the database ##
-endpoint = config['API']['baseurl'] + Resources().get_addBookResource()
+# API Test to add book to the database ##
+endpoint = os.environ.get('baseurl') + Resources().get_addBookResource()
 response = requests.post(url=endpoint,
-                         json=payload.addBookPayload(),
+                         json=payload.addBookPayload("test", "1234FB", "Fiction", "JK Rowling"),
                          headers=Headers().get_content_json())
 json_response = response.json()
 

@@ -20,7 +20,7 @@ def step_addBookIMPL(context):
 def step_addBookIMPL(context, bookName, isbn, aisle, authorName):
     context.response = requests.post(url=context.endpoint,
                                      json=payload.addBookPayload(bookName, isbn, aisle, authorName),
-                                     headers=Headers().get_content_json())
+                                     headers=Headers().getJSON())
 
 
 @then('book is successfully added')

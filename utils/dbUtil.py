@@ -2,7 +2,9 @@ import os
 import mysql.connector
 from mysql.connector import Error
 import logging
-from utils.configurations import getConfig
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logging.basicConfig(filename=os.pardir + os.sep + 'logs' + os.sep + 'dblogs.log',
                     filemode='w',
@@ -19,11 +21,10 @@ class DbUtil:
     __conn = None
 
     def __init__(self):
-        config = getConfig()
-        self.__dbhost = config['SQL']['host']
-        self.__dbName = config['SQL']['database']
-        self.__dbusername = config['SQL']['user']
-        self.__dbpassword = config['SQL']['password']
+        self.__dbhost = os.environ.get('host')
+        self.__dbName = os.environ.get('database')
+        self.__dbusername = os.environ.get('user')
+        self.__dbpassword = os.environ.get('password')
 
     def giveMeConnection(self):
         try:

@@ -1,4 +1,4 @@
-class Headers():
+class Headers:
     __CONTENT_JSON = {
         'Content-Type': 'application/json'
     }
