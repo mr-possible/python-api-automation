@@ -1,0 +1,1 @@
+getBook = 'SELECT * FROM books'
