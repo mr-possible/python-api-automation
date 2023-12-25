@@ -1,0 +1,1 @@
+getCustomerInfo = 'SELECT * FROM customerinfo'
